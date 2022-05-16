@@ -1,0 +1,70 @@
+@use '../abstracts/' as *;
+
+.sidebar {
+    position: fixed;
+    background: $black;
+    top: 0;
+    height: 100vh;
+    width: 80%;
+    z-index: 999;
+    transition: 500ms ease-in-out;
+
+    &__right {
+        display: table;
+        float: right;
+        font-style: normal;
+        margin-top: -.375rem;
+    }
+
+    &__menu {
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    &__text {
+        margin-right: .32em;
+        color: $white;  
+    }
+
+    &__close {
+
+        > span {
+            display: block;
+            background: $white;
+            width: 26px;
+            height: 2.5px;
+            border-radius: 3px;
+            
+
+            &:first-child {
+                transform: rotate(45deg) translateY(2px);
+            }
+
+            &:last-child {
+                transform: rotate(-45deg) translateY(-2px);
+            }
+        }
+    }
+
+    &__links {
+        padding-top: 8rem;
+
+        li {
+            
+            &:not(:last-child) {
+                margin-bottom: .5rem;
+            }
+
+            a {
+                color: $white;
+                font-size: 2rem;
+                font-weight: 700;
+                transition: 500ms ease-in-out;
+
+                &:hover {
+                    padding-left: 1rem;
+                }
+            }
+        }
+    }
+}

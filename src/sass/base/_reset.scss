@@ -1,0 +1,57 @@
+@use  '../abstracts' as *;
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: .623vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: $black;
+    border-radius: 1em;
+    margin: 1rem 0;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: $background-color;
+    border-radius: 1em;
+    margin: 4.8125rem 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $primary-font;
+    font-weight: 400;
+    overflow-x: hidden;
+    background-color: $background-color;
+}
+
+::selection {
+    color: $white;
+    background-color: $primary-color;
+}
+
+:target {
+    scroll-margin-top: 2.5rem;
+}
+
+a, a:hover, a:focus {
+    text-decoration: none;
+}
+
+ol, ul {
+    list-style: none;  
+}
+
+img, picture {
+    max-width: 100%;
+}

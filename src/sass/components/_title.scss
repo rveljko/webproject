@@ -1,0 +1,40 @@
+@use '../abstracts/' as *;
+
+.title {
+    padding: 3rem 0;
+    position: relative;
+    
+    h2 {
+        position: relative;
+        max-width: max-content;
+        margin: 0 auto;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            height: .3125rem;
+            border-radius: .3125rem;
+            bottom: -.3125rem;
+            background: linear-gradient(45deg, $secondary-color, $primary-color);
+            border-radius: .2em;
+        }
+    }
+
+    &--project {
+
+        @include breakpoint(large) {
+            padding: 5.75rem;
+        }
+        
+       h1 {
+           font-size: 2.25rem;
+
+           @include breakpoint(large) {
+               font-size: 3rem;
+           }
+       }
+    }
+}

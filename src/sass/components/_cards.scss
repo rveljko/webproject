@@ -1,0 +1,122 @@
+@use '../abstracts/' as *;
+
+.card {
+    background: $white;
+    align-items: center;
+    flex-direction: column;
+    max-width: 31.25rem;
+    border-radius: .3125rem;
+    -webkit-box-shadow: 0 1rem 1.5625rem 0 rgba($black, $alpha: 5%);
+    -moz-box-shadow: 0 1rem 1.5625rem 0 rgba($black, $alpha: 5%);
+    box-shadow: 0 1rem 1.5625rem 0 rgba($black, $alpha: 5%);
+
+    &--small {
+        max-width: 18.75rem;
+    }
+        
+    &:not(:last-child) {
+        margin-bottom: 6rem;
+        
+        @include breakpoint(medium) {
+            margin-bottom: 7rem;
+        }
+        
+        @include breakpoint(large) {
+            margin-bottom: 8rem;
+        }
+    }
+
+    &:nth-child(2) {
+        @include breakpoint(large) {
+            flex-direction: row-reverse;
+        }
+    }
+    
+    @include breakpoint(large) {
+        flex-direction: row;
+        max-width: 62.5rem;
+    }
+
+    &__image {
+        flex-basis: 50%;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+
+        &--small {
+            flex-basis: 30%;
+        }
+
+        &--left {
+            
+            img {
+                border-top-left-radius: .3125rem;
+                border-top-right-radius: .3125rem;
+                
+                @include breakpoint(large) {
+                    border-top-right-radius: 0;
+                    border-bottom-left-radius: .3125rem;
+                }
+            }
+        }
+        
+        &--right {
+            
+            img {
+                border-top-left-radius: .3125rem;
+                border-top-right-radius: .3125rem;
+
+                @include breakpoint(large) {
+                    border-top-left-radius: 0;
+                    border-bottom-right-radius: .3125rem;
+                }
+            }
+        }
+        
+    }
+
+    &__informations {
+        flex-basis: 50%;
+        padding: 3rem;
+
+        &--large {
+            flex-basis: 70%;
+        }
+    }
+
+    &__title {
+        margin-bottom: .25em;
+        line-height: 1em;
+    }
+
+    &__description {
+        margin-bottom: 2rem;
+    }
+
+    &__name {
+        line-height: 1em;
+        margin-bottom: .25em;
+    }
+
+    &__quote {
+        margin-bottom: 2rem;
+        position: relative;
+
+        &::before {
+            content: '\201c';
+            position: absolute;
+            left: -1.5rem;
+            top: -2rem;
+            font-size: 3.5rem;
+            color: $neutral-dark;
+        }
+
+        &::after {
+            content: '\201d';
+            position: absolute;
+            bottom: -3.5rem;
+            font-size: 3.5rem;
+            color: $neutral-dark;
+        }
+    }
+}

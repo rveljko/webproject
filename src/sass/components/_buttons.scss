@@ -1,0 +1,75 @@
+@use '../abstracts/' as *;
+
+.button {
+    display: inline-block;
+    font-weight: 700;
+    background: linear-gradient(45deg, $primary-color, $secondary-color);
+    color: $white;
+    padding: .15em .7em;
+    border-radius: .2em;
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: .3125rem;
+        background: linear-gradient(45deg, $primary-color, $secondary-color);
+        bottom: -.4em;
+        border-radius: .3125em;
+        left: 50%;
+        transform: translate(-50%);
+        transition: 500ms ease-in-out;
+    }
+
+    &:hover::after, &:focus::after {
+        width: 100%;
+    }
+
+    &--projects, &--testimonials {
+        background: transparent;
+        color: $black;
+        font-weight: 700;
+        padding: .154em .32695em;
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+        
+        &::after {
+            background: $black;
+            width: 100%;
+            bottom: -.2em;
+        }
+    }
+
+    &--form {
+        border: none;
+        outline: none;
+        font-family: $primary-font;
+        padding: .35em 1.35em;
+    }
+
+    &--socialmedias {
+        background: $black;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+
+        img {
+            max-width: 1.75rem;
+        }
+
+        &::after {
+            background: $black;
+        }
+
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+@use '../abstracts/' as *;
+
+.navigation {
+    background: $background-color;
+    position: sticky;
+    top: 0;
+    z-index: 998;
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+    }
+
+    &__logo {
+        font-size: 1.75rem;
+        font-weight: 700;
+
+        @include breakpoint(large) {
+            font-size: 2rem;
+        }
+    }
+
+    &__menu {
+        align-items: center;
+        cursor: pointer;
+
+        @include breakpoint(large) {
+            display: none;
+        }
+    }
+
+    &__text {
+        margin-right: .32em;
+    }
+
+    &__hamburger {
+
+        > span {
+            display: block;
+            background: $black;
+            width: 2rem;
+            height: .1875rem;
+            border-radius: .3125rem;
+
+            &:not(:last-child) {
+                margin-bottom: .25rem;
+            }
+        }
+    }
+
+    &__list {
+        display: none;
+
+        &--project {
+            display: block;
+        }
+
+        @include breakpoint(large) {
+            display: block;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+
+        &:not(:last-child) {
+            margin-right: 1.5rem;
+        }
+    }
+
+    &__link {
+        font-size: 1.2rem;
+        color: $black;
+        position: relative;
+        padding: .5rem;
+        transition: 500ms ease-out;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            background: linear-gradient(45deg, $primary-color, $secondary-color);
+            height: .3125rem;
+            bottom: 0;
+            left: 0;
+            border-radius: .3125rem;
+            transition: 500ms ease-in-out;
+        }
+
+        &:hover::after, &:focus::after {
+            width: 100%;
+        }
+    }
+}

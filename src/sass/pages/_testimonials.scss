@@ -1,0 +1,11 @@
+@use '../abstracts/' as *;
+
+.testimonials {
+    background-color: $background-color;
+    width: 100%;
+
+    &__content {
+        align-items: center;
+        flex-direction: column;
+    }
+}
