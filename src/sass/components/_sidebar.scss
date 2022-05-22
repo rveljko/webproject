@@ -48,23 +48,23 @@
 
     &__links {
         padding-top: 8rem;
+    }
 
-        li {
-            
-            &:not(:last-child) {
-                margin-bottom: .5rem;
-            }
+    &__item {
+        
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+    }
 
-            a {
-                color: $white;
-                font-size: 2rem;
-                font-weight: 700;
-                transition: 500ms ease-in-out;
+    &__link {
+        color: $white;
+        font-size: 2rem;
+        font-weight: 700;
+        transition: 500ms ease-in-out;
 
-                &:hover {
-                    padding-left: 1rem;
-                }
-            }
+        &:hover {
+            padding-left: 1rem;
         }
     }
 }
